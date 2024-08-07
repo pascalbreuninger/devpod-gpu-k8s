@@ -1,27 +1,6 @@
 {
   "name": "CUDA",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
-  "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {
-      "installZsh": true,
-      "configureZshAsDefaultShell": true,
-      "installOhMyZsh": true,
-      "installOhMyZshConfig": true,
-      "upgradePackages": true,
-      "username": "devpod"
-    },
-    "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/nvidia-cuda:1": {},
-    "ghcr.io/devcontainers/features/python:1": {
-      "installTools": true,
-      "toolsToInstall": "flake8,autopep8,black,yapf,mypy,pydocstyle,pycodestyle,bandit,pipenv,virtualenv,pytest,pylint,torch"
-    }
-  },
+  "image": "ghcr.io/pascalbreuninger/devpod-gpu-k8s:stable",
   "remoteUser": "devpod",
-  "postCreateCommand": "nvidia-smi",
-  "customizations": {
-    "devpod": {
-      "prebuildRepository": "ghcr.io/pascalbreuninger/devpod-gpu-k8s"
-    }
-  }
+  "postCreateCommand": "nvidia-smi"
 }
